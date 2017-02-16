@@ -74,49 +74,50 @@ As said above this is an experimental directive, so there is a word needed to he
 The following options can be passed both inside the p-tree-cfg object (to apply them globally) or as part of the p-tree-data object. 
 Options in the p-tree-data object override the global options.
 ## Global options
-- debug (true|__false__)
+- debug (true|__false__)  
 For development purposes, currently used to disable caching (if set to true).
-- offsetX (Number, __2__)
+- offsetX (Number, __2__)  
 To influence the x-axis' offset (incomplete)
-- offsetY (Number, __2__)
+- offsetY (Number, __2__)  
 To influence  the y-axis' offset (incomplete)
+
 ## List specific options
 (can globally passed in the cfg object as well)
-- displayField: string
+- displayField: string  
 The name of the attribute that is used to:
 -- display the item
 -- sort the item
 -- unique the item
 -- select similar items in cross-product selection mode
-- group (string)
+- group (string)  
 To group lists which will be used in drag and drop mode (movable).
-- movable (true/__false__)
+- movable (true/__false__)  
 Used to enable drag and drop mode inside named groups.
-- isolated (true/__false__)
+- isolated (true/__false__)  
 Marks the boundary for inheritance selection mode if two unrelated lists are shown next to each other.
-- selectMode: {__inherit__|cross-product}
+- selectMode: {__inherit__|cross-product}  
 Sets the selection mode (see selection modes below).
-- pageSize (Number, __8__)
+- pageSize (Number, __8__)  
 The number of items shown at once (pagination).
-- unfiltered (true, __false__)
+- unfiltered (true, __false__)  
 If true inserts an item into the list which, when selectd by the user, denotes that no item was selected and therefore does not apply the foreignKey filters for that list.
--  unfilteredName (String, __\* UNFILTERED \*__)
+-  unfilteredName (String, __\* UNFILTERED \*__)  
 The value of the inserted item in unfiltered mode.
-- emptyName (String, __\* EMPTY \*__)
+- emptyName (String, __\* EMPTY \*__)  
 If the list has no items to display, the emptyNode item is displayed. The 'emptyName' attribute's value is displayed in this case.
-- gapLookup (true, __false__)
+- gapLookup (true, __false__)  
 Can be used to enable gapLookup mode (see below).
-- noneName (String, __\* NONE \*__)
+- noneName (String, __\* NONE \*__)  
 This is the name of the noneItem which gets inserted in gapLookup mode if needed.
-- foreignKey (String, __name__)
+- foreignKey (String, __name__)  
 The lists key which is used inside the other lists' foreignkeyRelationships.
-- keyboardCtrl (__true__, false)
+- keyboardCtrl (__true__, false)  
 To disable keyboard control (not implemented yet).
-- selectable (true, __false__)
+- selectable (true, __false__)  
 To enable selection mode (see below).
-- itemKey (String, __id__)
+- itemKey (String, __id__)  
 The list's primary key.
-- selectKey (String, __\_\_selected__)
+- selectKey (String, __\_\_selected__)  
 The attribute which is used in select mode to store the selection value (boolean as of now).
 
 # Relationships
@@ -169,6 +170,12 @@ The selections in cross-product mode are not influenced by moves.
 noMatch nodes themselves cannot be selected but the selection is forwarded to the righties.
 This happens in both cases, if the 'click' happens directly on the noMatch node and in case a noMatch node is part of the propagation.  
 The same applies to the emptyNodes.
+
+## Result set
+If you do not pass a result object, but still enable select mode in at least one of the lists, the selection attributes are merged into the data structure that was provided.  
+Doing this is no problem, but keep in mind, that
+- by passing a result object you will be able to run a 'diff' later to see what has actually changed and
+- if you use sharedKey relationships and if you pass references to the same underlying data in more than one list, will result in unpredictable output if you do not pass a result object.
 
 # Sample data
 (The data used inside the example app provides a more complete picture.)
