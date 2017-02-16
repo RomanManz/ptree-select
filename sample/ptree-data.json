@@ -1,0 +1,84 @@
+[
+  {
+    "items": [
+      {
+        "name": "all"
+      },
+      {
+        "name": "few"
+      }
+    ],
+    "name": "Details"
+  },
+  {
+    "items": [
+      {
+        "name": "Uncle Sam",
+        "id": "1"
+      },
+      {
+        "name": "Aunt Sally",
+        "id": "2"
+      },
+      {
+        "name": "Grandma Jil",
+        "id": "3"
+      },
+      {
+        "name": "Grandpa Joe",
+        "id": "4"
+      }
+    ],
+    "name": "Friends",
+    "unfiltered": true,
+    "unfilteredName": "All of them"
+  },
+  {
+    "items": [ 
+      {
+        "name": "Paul",
+        "id": "pet1",
+        "species": "dog",
+        "legs": 4,
+        "color": "grey",
+        "age": 120,
+        "Friends": [ "Uncle Sam", "Aunt Sally", "Grandma Jil", "Grandpa Joe" ]
+      },
+      {
+        "name": "Charly",
+        "id": "pet2",
+        "species": "dog",
+        "legs": 4,
+        "color": "blond",
+        "age": 8,
+        "Friends": [ "Uncle Sam", "Grandma Jil", "Grandpa Joe" ]
+      },
+      {
+        "name": "Whoopy",
+        "id": "pet3",
+        "species": "cat",
+        "legs": 4,
+        "color": "grey",
+        "age": 8,
+        "Friends": [ "Uncle Sam", "Aunt Sally", "Grandma Jil", "Grandpa Joe" ]
+      },
+      {
+        "name": "Mowgli",
+        "id": "pet4",
+        "species": "bird",
+        "legs": 2,
+        "color": "orange",
+        "age": 16,
+        "Friends": [ "Grandma Jil", "Grandpa Joe" ]
+      },
+      {
+        "name": "Nemo",
+        "id": "pet5",
+        "species": "fish",
+        "color": "orange",
+        "age": 4,
+        "Friends": [ "Uncle Sam", "Aunt Sally" ]
+      }
+    ]
+  }
+]

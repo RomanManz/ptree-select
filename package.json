@@ -1,0 +1,50 @@
+{
+  "name": "ptree-select",
+  "version": "0.0.1",
+  "description": "An experimental Angular Directive to display related/hierarchical data.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp play",
+    "test": "gulp test"
+  },
+  "keywords": [
+    "Angular",
+    "UX",
+    "hierarchical data"
+  ],
+  "author": "ManzTheReader",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-mocks": "^1.6.2",
+    "angular-resource": "^1.6.2",
+    "babili": "0.0.11",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean-css": "^3.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^1.0.0",
+    "gulp-directive-replace": "^0.3.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify": "0.0.15",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.1",
+    "gulp-watch": "^4.3.11",
+    "gulp-watch-jade": "^1.0.2",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "jasmine-jquery": "^2.1.1",
+    "jquery": "^3.1.1",
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-fixture": "^0.2.6",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-json-fixtures-preprocessor": "0.0.6",
+    "open": "0.0.5",
+    "serve-index": "^1.8.0",
+    "serve-static": "^1.11.2"
+  }
+}

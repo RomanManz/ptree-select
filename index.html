@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>ptree-select Demo</title>
+    <link rel="stylesheet" href="/src/ptree-select.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="angularTestApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div ng-controller="ptree-data">
+			<h3>ptree-select Demo</h3>
+      <p-tree p-tree-data="data" p-tree-cfg="cfg" p-tree-result="result"></p-tree>
+      <hr/>
+      <div>
+        Result
+        <br/>
+        <ul>
+          <li ng-repeat="list in result">
+            {{list.name}}
+            <ul>
+               <li ng-repeat="sel in list.items | filter:{__selected: true}">
+                  {{sel[list.name]}}
+               </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+		</div>
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="/sample/ptree-data.js"></script>
+    <script src="/src/ptree-select.js"></script>
+    <script src="/src/ptree-select.filters.js"></script>
+    <script src="/src/ptree-select.service.js"></script>
+    <script src="/src/ptree-select.directives.js"></script>
+		<script src="http://localhost:35729/livereload.js"></script>
+  </body>
+</html>

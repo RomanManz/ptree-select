@@ -1,0 +1,226 @@
+/* The y-axis left shift leads to an overflow on the right even if the x-axis stops earlier, could someone explain please! */
+html {
+	overflow: hidden;
+}
+
+body {
+	font: normal 1em Verdana, Arial;
+	margin: 0;
+}
+
+h3 {
+	display: inline;
+	margin-right: 10px;
+}
+
+#ptree-main {
+}
+
+#ptree-x {
+	display: flex;
+	position: relative;
+	top: 4em;
+	z-index: 1; /* x-axis needs to be on top of y for the filter boxes to get the focus */
+}
+
+.ptree-cell {
+	width: 10em;
+	height: 2em;
+	display: flex;
+}
+.pointer {
+  cursor: pointer;
+}
+
+/* the item that holds the focus */
+.ptree-xlabel {
+	position: absolute;
+	top: -1em;
+	font-weight: bold;
+  white-space: nowrap;
+}
+
+#ptree-y {
+	position: relative;
+	left: 20em;
+	top: -2em; /* HELPME: Why does this start so far below ptree-main? */
+	z-index: 0;
+}
+
+.ptree-master {
+	margin-top: 2em; /* keep one ptree-cell hight distance */
+	font-weight: bold;
+}
+
+.selectable {
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 0.5em;
+	margin-bottom: 2px;
+  border-radius: 5px;
+  position: relative;
+}
+.selectable-unselected {
+  background-color: #D8D3D3;
+}
+.selectable-selected {
+  background-color: #30F73F;
+}
+.selectable:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\26AA";
+  /* font-size: 50px; */
+  color: #FFF;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+/* The arrows - https://css-tricks.com/snippets/css/css-triangle/ */
+#ptree-list {
+  /* required so that the arrow positions fit */
+  position: absolute;
+}
+
+.arrow-box {
+  position: absolute;
+  top: -3em;
+  left: 6em;
+	z-index: 2;
+}
+
+.arrow-up {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid grey;
+  top: -1em;
+  left: 1em;
+}
+.arrow-up:hover {
+  border-bottom:10px solid lightgrey; 
+}
+
+.arrow-down {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid grey;
+  top: 2em;
+  left: 1em;
+}
+.arrow-down:hover {
+  border-top:10px solid lightgrey; 
+}
+
+.arrow-right {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid grey;
+  left: 3em;
+}
+.arrow-right:hover {
+  border-left:10px solid lightgrey; 
+}
+
+.arrow-left {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-right:10px solid grey; 
+}
+.arrow-left:hover {
+  border-right:10px solid lightgrey; 
+}
+
+.arrow {
+  width: 0; 
+  height: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+/* filter text box */
+.filter {
+  height: 2em;
+  width: 10em;
+	visibility: hidden;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+  border-radius: 15px;
+}
+
+.filter:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+  border-radius: 15px;
+	visibility: visible;
+}
+
+.filterdiv {
+	position: absolute;
+	top: -3em;
+}
+
+.y-current:hover .filter {
+	visibility: visible;
+}
+
+.focused {
+	visibility: visible;
+}
+
+.forcefocused {
+	visibility: visible;
+}
+
+/* selected items preview */
+.preview {
+	left: 1em;
+	position: absolute;
+}
+
+.preview > ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.preview > ul > li {
+  display: flex;
+}
+
+.preview > div {
+  font-weight: bold;
+}
+
+.preview > ul > li > div {
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 0.5em;
+	margin-bottom: 2px;
+  background-color: #FA6900;
+  border-radius: 5px;
+  position: relative;
+}
+
+.preview > ul > li > div:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "\274c";
+  /* font-size: 50px; */
+  color: #FFF;
+  line-height: 1.5em;
+  text-align: center;
+}
+

@@ -1,0 +1,7 @@
+div#ptree-main
+  div#ptree-x
+    p-tree-list.ptree-cell(ng-repeat="list in lists | pTreeSkip:svc")
+  div#ptree-y
+    p-tree-item(ng-repeat="item in context._items | pTreeGapLookup:context:svc | pTreeFilter:context.filter | pTreeItems:svc:context | filter:{__hidden:'!true'} | pTreeOrderBy:context._name | pTreeUnique:context._name | pTreeSetFilteredList:context | pTreeLimitTo:context.itemsToShow:context.curY | pTreeLast:svc:context")
+    a.pointer(ng-click="context.showMore()" ng-hide="context.itemsToShow >= context.filteredList.length - context.curY")
+      | show more

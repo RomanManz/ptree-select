@@ -1,0 +1,6 @@
+div.ptree-cell(ng-class="{ 'ptree-master': $index === context.offsetY, pointer: context.selectable }" ng-init="resultItem = context.getResultItem(item[context.itemKey])" ng-click="context.selectable && context.toggleResultItem(item[context.itemKey], svc)")
+  //
+    span(ng-show="context.selectable && ! item.__ignore" ng-class="resultItem[context.selectKey] ? 'selectable-selected' : 'selectable-unselected'")
+    | &nbsp;&nbsp;&nbsp;
+  div.selectable(ng-show="context.selectable && ! item.__ignore" ng-class="resultItem[context.selectKey] ? 'selectable-selected' : 'selectable-unselected'")
+  | {{ item[context._name] }}
