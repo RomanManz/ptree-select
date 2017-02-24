@@ -265,6 +265,12 @@ The build step (`gulp build`) inlines the html templates into the concatenated (
 Run `gulp test` or `gulp tdd` wil run the tests located in /test, either once or in continuous tdd mode.  
 The existing tests cover scrolling and drag and drop. Select mode is not covered yet (see bugs).
 
+# Wish list
+- Allow for more than one filter item per list; currently only the item underneath the title is implicitly used as filter.
+(This can be achieved by turning the 'focus' field into a list.
+- Allow the selected lists (the previews maybe) to consist of more than one field; and then group the selected list by those (configurable) fields.
+- Allow for dynamic data load callbacks. This could be split between foreignKey relationships load strategies and sharedKey relationships load strategies.
+
 # Bugs
 - In select mode when using ShowIf's the resultItems seem to get confused when switching views.
 - The same happens also to the selection previews when switching views.
